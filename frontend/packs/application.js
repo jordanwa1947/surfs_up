@@ -18,5 +18,5 @@
 import "./application.pcss";
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.body.insertAdjacentHTML("afterbegin", "Webpacker works!")
+  document.body.insertAdjacentHTML("afterbegin", "Webpacker works!");
 });
