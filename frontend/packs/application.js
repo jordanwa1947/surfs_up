@@ -17,4 +17,6 @@
 import "init";
 import "./application.pcss";
 import "components/header/header";
+import "components/center_column/center_column";
 import "components/location_search/location_search";
+import "components/forecast_container/forecast_container";

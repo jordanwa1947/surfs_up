@@ -1,2 +1,5 @@
 <%= render "components/header/header" %>
-<%= render "components/location_search/location_search" %>
+<%= render "components/center_column/center_column" do %>
+  <%= render "components/location_search/location_search" %>
+  <%= render "components/forecast_container/forecast_container"%>
+<% end %>
