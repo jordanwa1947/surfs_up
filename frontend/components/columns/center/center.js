@@ -1,4 +1,4 @@
-import "./center_column.pcss";
+import "./center.pcss";
 
 document.addEventListener("DOMContentLoaded", () => {
   const centerColumn = document.getElementById("center-col");
