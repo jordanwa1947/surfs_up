@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function disableInteraction() {
       moving = true;
-      setTimeout(function() {
+      setTimeout(() => {
         moving = false;
       }, 500);
     }
