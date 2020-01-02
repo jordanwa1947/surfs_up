@@ -10,7 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "components/header/header" %>
+    <main class="main-content">
+      <%= yield %>
+    </main>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </body>
 </html>
