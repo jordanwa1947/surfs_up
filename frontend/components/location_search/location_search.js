@@ -37,7 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(json => {
           const forecast = json.data.attributes;
           const name = json.data.attributes.location.location;
-          forecastContainer.innerHTML = `
+          const forecastHTML = `
+          <div class="request-format-bttns">
+            <button id="forecastHTML" class="format-bttn">Pretty</button>
+            <button id="forecastJSON" class="format-bttn">JSON</button>
+          </div>
           <h2 class="location-name"> ${name} </h2>
           <table class="forecast-table">
             <tr>
@@ -86,6 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           `;
+          forecastContainer.innerHTML = forecastHTML;
+          localStorage.setItem("forecastHTML", forecastHTML);
+          localStorage.setItem("forecastJSON", JSON.stringify(json.data));
         });
       forecastContainer.style.display = "block";
     }
