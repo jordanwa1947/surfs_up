@@ -17,3 +17,4 @@
 import "init";
 import "./application.pcss";
 import "components/header/header";
+import "components/location_search/location_search";
