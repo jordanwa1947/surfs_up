@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchField = document.getElementById("location-field");
   const forecastContainer = document.getElementById("forecast-container");
 
-  function fetchLocations(event) {
-    // uncomment and remove the local url to use the production server
-    // const url = 'https://surf-forecast-api.herokuapp.com/api/v1/search/locations';
+  searchField.addEventListener("keyup", event => {
     if (event.target.value) {
+      // uncomment and remove the local url to use the production server
+      // const url = 'https://surf-forecast-api.herokuapp.com/api/v1/search/locations';
       const url = "http://localhost:3000/api/v1/search/locations";
       const query = searchField.value;
       fetch(`${url}?query=${query}`)
@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
           let dropdownText = "";
           for (let i = 0; i < json.data.length; i += 1) {
             const spot = json.data[i].attributes;
-            dropdownText += `<div id='${spot.id}' class='location-drop-selection'> ${spot.location} </div>`;
+            dropdownText += `<div id='${spot.spot_id}' class='location-drop-selection'> ${spot.location} </div>`;
           }
           dropdown.innerHTML = dropdownText;
         });
     }
-  }
+  });
 
   dropdown.addEventListener("click", event => {
     // uncomment and remove the local url to use the production server
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.target.classList.contains("location-drop-selection")) {
       const locationId = event.target.id;
       dropdown.innerHTML = "";
+      searchField.value = "";
       fetch(`${url}${locationId}/surf`)
         .then(data => data.json())
         .then(json => {
@@ -72,10 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
               <td>${forecast.temperature + forecast.temperature_unit}</td>
             </tr>
           </table>
+          <div id="carousel-cont" class="carousel-container">
+            <div class="carousel">
+              <img class="carousel-image initial" src="${
+                forecast.charts.swell
+              }">
+              <img class="carousel-image" src="${forecast.charts.period}">
+              <img class="carousel-image" src="${forecast.charts.wind}">
+              <img class="carousel-image" src="${forecast.charts.pressure}">
+              <div id="next-bttn" class="carousel-next-button"></div>
+              <div id="prev-bttn" class="carousel-prev-button"></div>
+            </div>
+          </div>
           `;
         });
+      forecastContainer.style.display = "block";
     }
   });
-
-  document.fetchLocations = fetchLocations;
 });
