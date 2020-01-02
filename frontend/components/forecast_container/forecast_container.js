@@ -2,7 +2,10 @@ import "./forecast_container.pcss";
 
 document.addEventListener("DOMContentLoaded", () => {
   const forecastContainer = document.getElementById("forecast-container");
+  // callback is invoked when a child Element is inserted
+  // or deleted from the forecastContainer
   function callback() {
+    const jsonElement = document.querySelector("p.json");
     const images = document.getElementsByClassName("carousel-image");
     const prevBttn = document.getElementById("prev-bttn");
     const nextBttn = document.getElementById("next-bttn");
@@ -57,8 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
       moveCarouselTo(slide);
     }
 
-    nextBttn.addEventListener("click", moveToPrev);
-    prevBttn.addEventListener("click", moveToNext);
+    if (!jsonElement) {
+      nextBttn.addEventListener("click", moveToPrev);
+      prevBttn.addEventListener("click", moveToNext);
+    }
   }
 
   const config = { childList: true };
