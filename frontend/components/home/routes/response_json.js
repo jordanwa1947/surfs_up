@@ -155,40 +155,43 @@ export default function() {
   }
 
   function surfForecast() {
-    return `<p class='json'>{<br>
-          "data": {<br>
-              "id": "1",<br>
-              "type": "forecast",<br>
-              "attributes": {<br>
-                  "faded_rating": 0,<br>
-                  "solid_rating": 3,<br>
-                  "issue_timestamp": "Wed Jan  1 06:00:00 2020",<br>
-                  "local_timestamp": "Wed Jan  1 21:00:00 2020",<br>
-                  "min_break_height": 2,<br>
-                  "max_break_height": 4,<br>
-                  "wave_unit": "ft",<br>
-                  "wind_direction": "S",<br>
-                  "wind_speed": 9,<br>
-                  "wind_gusts": 12,<br>
-                  "wind_unit": "mph",<br>
-                  "temperature": 47,<br>
-                  "temperature_unit": "f",<br>
-                  "charts": {<br>
-                      "swell": "https://charts-s3.msw.ms/archive/wave/750/1-1577912400-1.gif",<br>
-                      "period": "https://charts-s3.msw.ms/archive/wave/750/1-1577912400-2.gif",<br>
-                      "wind": "https://charts-s3.msw.ms/archive/gfs/750/1-1577912400-4.gif",<br>
-                      "pressure": "https://charts-s3.msw.ms/archive/gfs/750/1-1577912400-3.gif"<br>
-                  },<br>
-                  "location": {<br>
-                      "id": 1,<br>
-                      "spot_id": 1,<br>
-                      "location": "Newquay - Fistral North",<br>
-                      "latitude": 50.4184,<br>
-                      "longitude": -5.0997<br>
-                  }<br>
-              }<br>
-          }<br>
-      }</p>`;
+    return `
+      <div class="request-format-bttns">
+        <button id="exampleHTML" class="format-bttn">Pretty</button>
+        <button id="exampleJSON" class="format-bttn">JSON</button>
+      </div>
+      <p class='json'>{<br>
+         "id" : "1",<br>
+         "type" : "forecast",<br>
+         "attributes" : {<br>
+         "faded_rating" : 4,<br>
+         "solid_rating" : 1,<br>
+         "issue_timestamp" : "Fri Jan 3 06 : 00 : 00 2020",<br>
+         "local_timestamp" : "Fri Jan 3 15 : 00 : 00 2020",<br>
+         "min_break_height" : 7,<br>
+         "max_break_height" : 10,<br>
+         "wave_unit" : "ft",<br>
+         "wind_direction" : "NNW",<br>
+         "wind_speed" : 17,<br>
+         "wind_gusts" : 20,<br>
+         "wind_unit" : "mph",<br>
+         "temperature" : 48,<br>
+         "temperature_unit" : "f",<br>
+         "charts" : {<br>
+         "swell" : "https : //charts-s3.msw.ms/archive/wave/750/1-1578063600-1.gif",<br>
+         "period" : "https : //charts-s3.msw.ms/archive/wave/750/1-1578063600-2.gif",<br>
+         "wind" : "https : //charts-s3.msw.ms/archive/gfs/750/1-1578063600-4.gif",<br>
+         "pressure" : "https : //charts-s3.msw.ms/archive/gfs/750/1-1578063600-3.gif"<br>
+       },<br>
+         "location" : {<br>
+         "id" : 1,<br>
+         "spot_id" : 1,<br>
+         "location" : "Newquay - Fistral North",<br>
+         "latitude" : 50.4184,<br>
+         "longitude" : -5.0997<br>
+       }<br>
+     }<br>
+         }</p>`;
   }
 
   return {
