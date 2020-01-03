@@ -24,3 +24,4 @@ import "components/home/routes/routes";
 import "components/columns/center/center";
 import "components/home/location_search/location_search";
 import "components/home/forecast_container/forecast_container";
+import "components/home/intro_text/intro_text";
