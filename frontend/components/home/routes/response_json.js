@@ -1,4 +1,4 @@
-export default function responseJson() {
+export default function() {
   function searchLocations() {
     return `<p class="json">{<br>
         "data": [<br>
