@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const routeCont = document.getElementById("route-cont");
   const routes = document.querySelectorAll(".route");
   const forecastCont = document.getElementById("forecast-container");
+
+  localStorage.setItem("exampleJSON", responseJson().surfForecast);
+  localStorage.setItem("exampleHTML", forecastCont.innerHTML);
   function insertExampleJson(event) {
     switch (event.target.id) {
       case "search-locations":
@@ -14,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         forecastCont.innerHTML = responseJson().allLocations;
         break;
       case "surf-forecast":
-        forecastCont.innerHTML = responseJson().surfForecast;
+        forecastCont.innerHTML = localStorage.getItem("exampleJSON");
         break;
       default:
     }

@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
           )}</p>
           `;
           break;
+        case "exampleHTML":
+          forecastContainer.innerHTML = localStorage.getItem("exampleHTML");
+          break;
+        case "exampleJSON":
+          forecastContainer.innerHTML = localStorage.getItem("exampleJSON");
+          break;
         default:
       }
     }
