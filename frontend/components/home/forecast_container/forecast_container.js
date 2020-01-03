@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // callback is invoked when a child Element is inserted
   // or deleted from the forecastContainer
   function callback() {
-    const jsonElement = document.querySelector("p.json");
     const images = document.getElementsByClassName("carousel-image");
     const prevBttn = document.getElementById("prev-bttn");
     const nextBttn = document.getElementById("next-bttn");
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       moveCarouselTo(slide);
     }
 
-    if (!jsonElement) {
+    if (images[0]) {
       nextBttn.addEventListener("click", moveToPrev);
       prevBttn.addEventListener("click", moveToNext);
     }
