@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchField.addEventListener("keyup", event => {
     if (event.target.value) {
-      // uncomment and remove the local url to use the production server
-      // const url = 'https://surf-forecast-api.herokuapp.com/api/v1/search/locations';
-      const url = "http://localhost:3000/api/v1/search/locations";
+      const url =
+        "https://surf-forecast-api.herokuapp.com/api/v1/search/locations";
+      // const url = "http://localhost:3000/api/v1/search/locations";
       const query = searchField.value;
       fetch(`${url}?query=${query}`)
         .then(data => data.json())
@@ -25,13 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   dropdown.addEventListener("click", event => {
-    // uncomment and remove the local url to use the production server
-    // const url = 'https://surf-forecast-api.herokuapp.com/api/v1/';
-    const url = "http://localhost:3000/api/v1/";
+    const url = "https://surf-forecast-api.herokuapp.com/api/v1/";
+    // const url = "http://localhost:3000/api/v1/";
+    function changeSelectedRoute() {
+      const routes = document.querySelectorAll(".route");
+      for (let i = 0; i < routes.length; i += 1) {
+        routes[i].classList.remove("selected");
+      }
+      routes[1].classList.add("selected");
+    }
+
     if (event.target.classList.contains("location-drop-selection")) {
       const locationId = event.target.id;
       dropdown.innerHTML = "";
       searchField.value = "";
+      changeSelectedRoute();
       fetch(`${url}${locationId}/surf`)
         .then(data => data.json())
         .then(json => {
@@ -94,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("forecastHTML", forecastHTML);
           localStorage.setItem("forecastJSON", JSON.stringify(json.data));
         });
-      forecastContainer.style.display = "block";
     }
   });
 });
