@@ -1,94 +1,51 @@
 <section id="forecast-container" class="forecast-cont">
-  <p class="json">{<br>
-      "data": [<br>
-          {<br>
-              "id": "1",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1,<br>
-                  "spot_id": 1,<br>
-                  "location": "Newquay - Fistral North",<br>
-                  "latitude": 50.4184,<br>
-                  "longitude": -5.0997<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "905",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 905,<br>
-                  "spot_id": 967,<br>
-                  "location": "Newquay - Great Western",<br>
-                  "latitude": 50.4162,<br>
-                  "longitude": -5.0781<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "1211",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1211,<br>
-                  "spot_id": 1336,<br>
-                  "location": "Newquay - Tolcarne Wedge",<br>
-                  "latitude": 50.4176,<br>
-                  "longitude": -5.0749<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "1212",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1212,<br>
-                  "spot_id": 1337,<br>
-                  "location": "Newquay - Porth",<br>
-                  "latitude": 50.4256,<br>
-                  "longitude": -5.0659<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "1223",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1223,<br>
-                  "spot_id": 1360,<br>
-                  "location": "Newquay-  Little Fistral",<br>
-                  "latitude": 50.4229,<br>
-                  "longitude": -5.1<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "1224",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1224,<br>
-                  "spot_id": 1361,<br>
-                  "location": "Newquay - Fistral South ",<br>
-                  "latitude": 50.4141,<br>
-                  "longitude": -5.1025<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "1225",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 1225,<br>
-                  "spot_id": 1362,<br>
-                  "location": "Newquay - Cribbar",<br>
-                  "latitude": 50.4254,<br>
-                  "longitude": -5.1026<br>
-              }<br>
-          },<br>
-          {<br>
-              "id": "5019",<br>
-              "type": "spot",<br>
-              "attributes": {<br>
-                  "id": 5019,<br>
-                  "spot_id": 6025,<br>
-                  "location": "Newquay - Towan",<br>
-                  "latitude": 50.4175,<br>
-                  "longitude": -5.0841<br>
-              }<br>
-          }<br>
-      ]<br>
-  } </p>
+  <div class="request-format-bttns">
+    <button id="exampleHTML" class="format-bttn">Pretty</button>
+    <button id="exampleJSON" class="format-bttn">JSON</button>
+  </div>
+  <h2 class="location-name"> Newquay - Fistral North </h2>
+  <table class="forecast-table">
+    <tbody><tr>
+      <td>Faded Rating</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Solid Rating</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Issued</td>
+      <td>Fri Jan  3 06:00:00 2020</td>
+    </tr>
+    <tr>
+      <td>Minimum Breaking Height</td>
+      <td>7ft</td>
+    </tr>
+    <tr>
+      <td>Maximum Breaking Height</td>
+      <td>10ft</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td>17mph</td>
+    </tr>
+    <tr>
+      <td>Wind Gusts</td>
+      <td>20mph</td>
+    </tr>
+    <tr>
+      <td>Temperature</td>
+      <td>48f</td>
+    </tr>
+  </tbody></table>
+  <div id="carousel-cont" class="carousel-container">
+    <div class="carousel">
+      <img class="carousel-image initial" src="https://charts-s3.msw.ms/archive/wave/750/1-1578063600-1.gif">
+      <img class="carousel-image" src="https://charts-s3.msw.ms/archive/wave/750/1-1578063600-2.gif">
+      <img class="carousel-image" src="https://charts-s3.msw.ms/archive/gfs/750/1-1578063600-4.gif">
+      <img class="carousel-image" src="https://charts-s3.msw.ms/archive/gfs/750/1-1578063600-3.gif">
+      <div id="next-bttn" class="carousel-next-button"></div>
+      <div id="prev-bttn" class="carousel-prev-button"></div>
+    </div>
+  </div>
 </section>
