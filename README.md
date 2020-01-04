@@ -1,6 +1,6 @@
 # Surfs Up
 
-[Surfs Up](https://surfs-up.herokuapp.com/) is a Rails frontend that demonstrates the surf-forecast-api that I created. It's optimized for frontend with Webpack, PostCSS, and Linting run before every commit to ensure that CSS and Javascript follow a set style.
+[Surfs Up](https://surfs-up.herokuapp.com/) is a Rails frontend that demonstrates the surf-forecast-api I created. It's optimized for frontend with Webpack, PostCSS, and Linting run before every commit to ensure that CSS and Javascript follow a set style.
 
 Checkout the [Surfs Up API](https://github.com/jordanwa1947/surfs_up_api)
 
